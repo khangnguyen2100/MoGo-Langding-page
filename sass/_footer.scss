@@ -1,0 +1,202 @@
+.footer {
+    display: flex;
+    align-items : center;
+    justify-content: space-between;
+
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    
+    &-info {
+        max-width: 40%;
+        &-logo {
+            margin-bottom: 4rem;
+            font-size: 4.6rem;
+            color : $gray-dark-color;
+        }
+        &-decs {
+            font-size: 1.3rem;
+            margin-bottom: 5rem;
+        }
+        &-fllowers {
+            color : $title-color;
+
+            span {
+                font-weight: 700;
+                font-size: 1.6rem;
+            }
+            position: relative;
+            &::after {
+                content : '';
+                position: absolute;
+                left : 0;
+                bottom : -1.5rem;
+
+                height: 1px;
+                width: 100%;
+                background-color : $gray-dark-color;
+            }
+        }
+        &-social {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            p {
+                font-weight: 300;
+                font-style: italic;
+                text-transform: capitalize;
+                margin-right: 2rem;
+            }
+            .social-list {
+                display: flex;
+                align-items : center;
+                justify-content: center;
+                i {
+                    color : $gray-dark-color;
+                    font-size: 1.6rem;
+                    transition: all .3s ease; 
+                    &:hover {
+                        color : $primary-color;
+                    }
+                    &:not(:last-child) {
+                        margin-right: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .send {
+        margin-top: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 5rem;
+        &-input {
+            width: 75%;
+            height: 100%;
+            padding-left: 1.5rem;
+
+            border : 1px solid $third-color;
+            border-radius: 5px 0 0 5px;
+            &:focus {
+                outline: none;
+            }
+        }
+        &-btn {
+            width: 25%;
+            height: 100%;
+            background-color : $third-color;
+
+            text-align: center;
+
+            border-radius: 0 5px 5px 0;
+            border : 0;
+
+            color : #fff;
+            font-weight: 500;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+    }
+    &-blogs {
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-height: 35rem;
+        
+        &-heading {
+            margin-bottom: 5rem;
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+        &-item {
+            display: flex;
+            align-items : center;
+
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+        &-img {
+            margin-right: 2rem;
+            border-radius: 2px;
+        }
+        &-content {
+            font-size: 1.2rem;
+            h3 {
+                line-height: 1.5;
+                text-transform: uppercase;
+                font-weight: 500;
+
+            }
+            p {
+                font-style: italic;
+                margin-top: 1rem;
+            }
+        }
+    }
+    &-ins {
+        max-width: 22.5%;
+        &-heading {
+            margin-bottom: 5rem;
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(3,9rem);
+            grid-template-rows: repeat(3,9rem);
+            grid-gap: 3px;
+        }
+        &-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        &-link {
+            font-style: italic;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+    }
+    @include repons(1024px) {
+        flex-direction: column;
+        & > *:not(:last-child) {
+            margin-bottom: 10rem;
+        }
+        & > * {
+            max-width: 85%;
+        }
+        &-ins {
+            margin-top: 5rem;
+            max-width: 100%;
+            &-list {
+                grid-template-columns: repeat(4,9rem);
+                grid-template-rows: repeat(2,9rem);
+            }
+        }
+    }
+    @include repons(479px) {
+        &-info {
+            max-width: 100%;
+        }
+        &-blogs {
+            max-width: 100%;
+        }
+    }
+}
+.contact {
+    color : $title-color;
+    padding: 3rem 0;
+    border-top : 1px $gray-dark-color solid;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,263 @@
+@mixin repons($bp) {
+  @media screen and (max-width : $bp) {
+    @content
+  }
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  @include repons (1024px) {
+    font-size: 56.25%;
+  }
+  @include repons (800px) {
+    font-size: 50%;
+  }
+  @include repons (600px) {
+    font-size: 43.75%;
+  }
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: $font-primary;
+  line-height: 1;
+  color: $title-color;
+  overflow-x: hidden;
+  font-size: 1.5rem;
+}
+p {
+  font-family: $font-secondary;
+  color : $text-color;
+  line-height: 1.5;
+}
+.wrraper {
+    max-width: 192rem;
+    width: 100%;
+    display: block;
+}
+.container {
+  max-width: 124rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin : 0 auto;
+  width: 100%;
+}
+.btn-trans {
+  display: inline-block;
+  padding: 1.5rem 3.5rem;
+  border : 3px solid currentColor;
+
+  color : #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  transition: all .3s ease;
+  &:hover {
+    color : $primary-color;
+    background-color: $gray-color;
+    border : 3px solid transparent;
+    transform : translateY(-3px);
+    &:active {
+      transform : translateY(-1px);
+    }
+  }
+}
+.heading {
+  text-align: center;
+  padding-top: 10rem;
+  margin-bottom: 8rem;
+  color : $title-color;
+  &-small {
+    font-family: $font-third;
+    font-size: 2.4rem;
+  } 
+  &-big {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 2rem;
+
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4rem;
+      left : 50%;
+      transform : translateX(-50%);
+
+      width: 6rem;
+      height: 3px;
+
+      background-color : $primary-color;
+    }
+  }
+}
+.heading-text {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  max-width: 95rem;
+  line-height: 1.5;
+}
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10rem 0;
+}
+.card {
+    width: calc(33.33% - 2rem);
+    height: 100%;
+    background-color: $third-color;
+    &-Bg {
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      
+      transition: all .4s ease;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+          transform: translate(-1rem,-1rem);
+          box-shadow: 0 2rem 4rem rgba(#000,.4);
+      }
+    }
+}
+.comment-name {
+  font-family: $font-third;
+
+  position: relative;
+  margin-left: 7rem;
+  margin-top: 2rem;
+  font-size: 2.4rem;
+  &:before {
+      content: '';
+      position: absolute;
+      top : 50%;
+      left : -7rem;
+      transform: translateY(-50%);
+
+      width: 6rem;
+      height: 3px;
+      background-color : $primary-color;
+  }
+}
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color : #fff;
+  
+}
+.owl-nav {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items : center;
+}
+.btn-slider {
+  position: absolute;
+  top : 50%;
+  transform : translateY(-50%);
+  font-size: 3rem;
+  color : $title-color;
+}
+
+@keyframes  movetoLeft {
+  0% {
+    transform: translateX(-50rem);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(2rem);
+    
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes  movetoRight {
+  0% {
+    transform: translateX(50rem);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-2rem);
+    
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes moveUp { 
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveDown { 
+  0% {
+    opacity: 0;
+    transform: translateY(-15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes changeColor {
+  0% {
+    width: 0;
+  }
+  83.33333333333%{
+    width: 8rem;
+  }
+  100% {
+    width: 8rem;
+  }
+}
+@keyframes sliderChange {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

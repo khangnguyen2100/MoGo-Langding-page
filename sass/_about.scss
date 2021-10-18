@@ -1,0 +1,114 @@
+.about {
+    &-list {
+        height:26rem;
+        @include repons(768px) {
+            height: auto;
+            flex-direction: column;
+            .card {
+                height: 40vw;
+                width: 60%;
+                &:not(:last-child) {
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+        @include repons(600px) {
+            .card {
+                width: 70%;
+                &:not(:last-child) {
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+        @include repons(479px) {
+            .card {
+                width:85%;
+                height: 50vw;
+                &:not(:last-child) {
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+    &-item-text {
+        color : #fff;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(5rem);
+        i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &-Bg {
+        &-1 {
+            background-image : url(../images/about-1.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/about-1.png);
+            }
+        }
+        &-2 {
+            background-image : url(../images/about-2.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/about-2.png);
+            }
+        }
+        &-3 {
+            background-image : url(../images/about-3.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/about-3.png);
+            }
+        }
+        &:hover .about-item-text {
+            transition: all .4s ease;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+.about-count-wrapper {
+    background-color : $third-color;
+    padding: 6rem 0;
+    .about-count {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-item {
+            color : #fff;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3 {
+                font-size: 7rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+               
+            }
+            span {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+            }
+            @include repons(768px) {
+                h3 {
+                    font-size: 5.5rem;
+                }
+                span {
+                    font-size: 1.2rem;
+                }
+            }
+            @include repons(479px) {
+                h3 {
+                    font-size: 4rem;
+                }
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

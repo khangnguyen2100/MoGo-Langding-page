@@ -1,0 +1,101 @@
+.team {
+    padding-bottom: 10rem;
+    &-list {
+        height: 47rem;
+    }
+    @include repons(768px) {
+        &-list {
+            flex-direction: column;
+            height: 100%;
+        }
+        &-item {
+            height:70vw;
+            width: 60%;
+            &:not(:last-child) {
+                margin-bottom: 15rem;
+            }
+        }
+    }
+    @include repons(479px) {
+        &-item {
+            width: 85%;
+            height:90vw;
+        }
+    }
+    &-Bg {
+        &-1 {
+            background-image : url(../images/team-1.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/team-1.png);
+            }
+        }
+        &-2 {
+            background-image : url(../images/team-2.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/team-2.png);
+            }
+        }
+        &-3 {
+            background-image : url(../images/team-3.png);
+            &:hover {
+                background-image:  $linear-gradient-primary, url(../images/team-3.png);
+            }
+        }
+    }
+    &-item-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateX(5rem);
+        transition: all .4s ease;
+        i {
+            width: 5rem;
+            height: 5rem;
+            border-right : 1px $primary-color solid;
+            color : $primary-color;
+            background-color : $secondary-color;
+            font-size: 2.4rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease;
+            &:hover {
+                transform: translateY(-3px);
+                color : #fff;
+                background-color : $primary-color;
+            }
+        }
+    }
+    &-item-info {
+        margin-top: 3rem;
+        text-align: center;
+        h3 {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        p {
+            font-style: italic;
+            text-transform: capitalize;
+            font-weight: 300;
+
+            margin-top: .5rem;
+        }
+    }
+    &-Bg:hover &-item-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.brand {
+    background-color : $gray-light-color;
+    padding: 6rem 0;
+    &-img {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        img {
+        }
+    }
+}

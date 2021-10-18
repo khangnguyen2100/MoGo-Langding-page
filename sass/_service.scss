@@ -1,0 +1,181 @@
+.service-main {
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    &-img {
+        width: calc(50% - 3rem);
+    }
+    &-content {
+        width: 50%;
+        transition: all .5s ease;
+        .service-item {
+            padding: 1.5rem;
+            padding-top: 0;
+            position: relative;
+            overflow: hidden;
+            border-radius : 3px;
+            border : 1px solid $gray-dark-color;
+            height: 6.5rem;
+            transition: all .5s ease;
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+            &-heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: all .5s ease;
+                z-index: 100;
+                padding-top: 1.5rem;
+                background-color: rgb(255, 255, 255);
+                &-left {
+                    display: flex;
+                    align-items: center;
+                    h3 {
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                }
+                &-right {
+                    transition: all .5s ease;
+                    cursor: pointer;
+                    color : $gray-dark-color;
+                    font-size: 2.4rem;
+                    margin-right: 2rem;
+                }
+            }
+            &-content {
+                z-index: -10;
+                overflow-y: auto;
+                height: 13rem;
+                width: 100%;
+                opacity: 0;
+                
+                margin-top: 1rem;
+                padding-top: 0.5rem;
+                padding-right: 4rem;
+                padding-left: 2rem;
+                margin-bottom: 1.5rem;
+                transform: translateY(-100%);
+                user-select: none;
+                pointer-events: none;
+
+                transition: all .5s ease;
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+                &::-webkit-scrollbar-track {
+                    border-radius: 3px;
+                    background: #f1f1f1;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $third-color;
+                    border-radius: 3px;
+                }
+                &-text {
+                    font-style: italic;
+                    font-weight: 300;
+                    line-height: 1.5;
+                }   
+            }
+        }
+        .service-item.active {
+            height: 20rem;
+            .service-item-heading-right {
+                transform: rotate(90deg);
+                transition: all .5s ease;
+            }
+            .service-item-content {
+                transition: all .5s ease;
+                transform: translateY(0);
+                opacity: 1;
+                user-select: unset;
+                pointer-events: unset;
+            }
+        }
+    }
+    @include repons(768px) {
+        flex-direction : column;
+        margin-bottom: 10rem;
+        align-items: center;
+        &-img {
+            width: 80%;
+            margin-bottom: 5rem;
+        }
+        &-content {
+            width: 90%;
+            
+        }
+    }
+    @include repons(479px) {
+        flex-direction : column;
+        &-img {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        &-content {
+            width: 100%;
+            
+        }
+    }
+}
+.comment {
+    background-color: $gray-light-color;
+    .comment-container {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+        .comment-content {
+            display: flex;
+            align-items : center;
+            justify-content : center;
+            &-img {
+                border: 4px $gray-dark-color solid;
+                margin-right: 6rem;
+                img {
+                    padding: 4rem;
+                }
+            }
+            &-text {
+                max-width: 70%;
+                font-size: 2.4rem;
+                font-style: italic;
+                font-weight: 300;
+            }
+            @include repons(600px) {
+                &-text {
+                    font-size: 1.6rem;
+                }
+                .comment-name {
+                    font-size: 1.8rem;
+                }
+                &-img {
+                    margin-right: 4rem;
+                    img {
+                        padding: 3rem;
+                    }
+                }
+            }
+            @include repons(350px) {
+                &-text {
+                    font-size: 1.4rem;
+                }
+                .comment-name {
+                    font-size: 1.6rem;
+                }
+                &-img {
+                    margin-right: 3rem;
+                    img {
+                        padding: 2.5rem;
+                    }
+                }
+            }
+        }
+        @include repons(479px) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+}
