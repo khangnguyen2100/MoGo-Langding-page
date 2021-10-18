@@ -45,21 +45,21 @@
     }
     &-Bg {
         &-1 {
-            background-image : url(../images/about-1.png);
+            background-image : url(./images/about-1.png);
             &:hover {
-                background-image:  $linear-gradient-primary, url(../images/about-1.png);
+                background-image:  $linear-gradient-primary, url(./images/about-1.png);
             }
         }
         &-2 {
-            background-image : url(../images/about-2.png);
+            background-image : url(./images/about-2.png);
             &:hover {
-                background-image:  $linear-gradient-primary, url(../images/about-2.png);
+                background-image:  $linear-gradient-primary, url(./images/about-2.png);
             }
         }
         &-3 {
-            background-image : url(../images/about-3.png);
+            background-image : url(./images/about-3.png);
             &:hover {
-                background-image:  $linear-gradient-primary, url(../images/about-3.png);
+                background-image:  $linear-gradient-primary, url(./images/about-3.png);
             }
         }
         &:hover .about-item-text {
