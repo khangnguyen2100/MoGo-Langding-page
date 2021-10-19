@@ -88,19 +88,19 @@
             }
         }
         &-5 {
-            background-image: url(/images/show-5.png);
+            background-image: url(./images/show-5.png);
             grid-row: 2/3;
             grid-column: 1/2;
             &:hover {
-                background-image: $linear-gradient-primary, url(/images/show-5.png);
+                background-image: $linear-gradient-primary, url(./images/show-5.png);
             }
         }
         &-6 {
-            background-image: url(/images/show-6.png);
+            background-image: url(./images/show-6.png);
             grid-row: 2/3;
             grid-column: 2/3;
             &:hover {
-                background-image: $linear-gradient-primary, url(/images/show-6.png);
+                background-image: $linear-gradient-primary, url(./images/show-6.png);
             }
         }
         &-7 {
@@ -139,7 +139,6 @@
 
         }
     }
-
 }
 .quote {
     display: flex;
@@ -162,24 +161,21 @@
         justify-content: center;
         &-img {
             margin-right: 3rem;
+            max-width: 30%;
             img {
-                height: 21rem;
-                width: 21rem;
-                object-fit: cover;
+                object-fit: contain;
             }
         }
         &-text {
             max-width: 47vw;
+            max-width: 70%;
             font-size: 1.6rem;
             font-style: italic;
             font-weight: 300;
         }
-        @include repons(768px) {
-            &-img {
-                img {
-                    width: 17rem;
-                    height: 17rem;
-                }
+        &-name {
+            @include repons(479px) {
+                font-size: 1.2rem;
             }
         }
     }

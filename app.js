@@ -55,26 +55,26 @@
             }
         }
     })
-    $('.brand-img').owlCarousel({
-        loop:true,
-        autoplay:true,
-        autoplayTimeout: 2500,
-        autoplaySpeed:1000,
+    // $('.brand-img').owlCarousel({
+    //     loop:true,
+    //     autoplay:true,
+    //     autoplayTimeout: 2500,
+    //     autoplaySpeed:1000,
 
-        nav : false,
-        dots : false,
-        responsive:{
-            200:{
-                items:4,
-            },
-            600:{
-                items:5,
-            },
-            1000:{
-                items:6,
-            }
-        }
-    })
+    //     nav : false,
+    //     dots : false,
+    //     responsive:{
+    //         200:{
+    //             items:4,
+    //         },
+    //         600:{
+    //             items:5,
+    //         },
+    //         1000:{
+    //             items:6,
+    //         }
+    //     }
+    // })
     $('.owl-repons').owlCarousel({
         loop:true,
         margin:10,
@@ -141,8 +141,29 @@ const nav = document.querySelector('.nav-wrapper')
     window.addEventListener('scroll' , () => {
         if (nav.offsetHeight + 140 < window.scrollY ) {
             nav.classList.add('active')
+            navList.classList.add('sticky')
         }
         else {
             nav.classList.remove('active')
+            navList.classList.remove('sticky')
         }
-    })
+})
+//nav mobile 
+const navMobile = document.querySelector('.nav-mobile')
+const navList = document.querySelector('.nav-list')
+const  body = document.getElementsByTagName('body')[0]
+let isMobile = false
+navMobile.addEventListener('click', () => {
+    navMobile.classList.toggle('active')
+    navList.classList.toggle('active')
+    body.classList.toggle('active')
+
+})
+window.addEventListener('click' , (e)=> {
+    console.log(e.target)
+    if(e.target.classList.contains('nav-mobile') == false && e.target.classList.contains('line') == false) {
+        navMobile.classList.remove('active')
+        navList.classList.remove('active')
+        body.classList.remove('active')
+    }
+})
