@@ -180,7 +180,7 @@
             &-list {
                 grid-template-columns: repeat(4,9rem);
                 grid-template-rows: repeat(2,9rem);
-                grid-auto-flow: row dense;
+                grid-auto-rows: 9rem;
             }
         }
     }

@@ -1,13 +1,15 @@
 .blog {
+    padding-bottom: 10rem;
+
     &-list {
         display: flex;
         align-items : center;
         justify-content: space-between;
+
         &:hover .blog-item:not(:hover) {
             transform: scale(.98);
         }
     }
-    padding-bottom: 10rem;
     &-item {
         display: flex;
         flex-direction: column;
@@ -25,12 +27,15 @@
         }
         &-tag {
             position: absolute;
-            background-color : $third-color;
-            color : #fff;
-            padding: 1.5rem;
-            text-align: center;
             bottom: 16rem;
             left: 4rem;
+
+            padding: 1.5rem;
+            background-color : $third-color;
+
+            color : #fff;
+            text-align: center;
+
             transition: all .4s ease;
             opacity: 0;
             p {
@@ -91,12 +96,10 @@
                 color : $third-color;
             }
         }
-
     }
     @include repons(768px) {
         &-list {
             flex-direction : column;
-            
         }
         &-item {
             width: 90%;

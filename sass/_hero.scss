@@ -16,134 +16,16 @@
     display: flex;
     align-items : center;
     justify-content:space-between;
-    height: 7.5rem;
-    // padding-top: 2.5rem;
-    // padding-bottom: 2.5rem;
+
     animation: fill 1s ease;
-    
-    &-logo {
-        backdrop-filter: blur(5px);
+    height: 7rem;
+    @include repons(900px) {
+        height: 6rem;
     }
     &-list {
         display: flex;
         align-items : center;
         justify-content: center;
-
-        @include repons(900px) {
-            transform: translateX(35rem);
-            opacity: 0;
-            width: 40vw;
-            height: 100vh;
-            background-color: #00cec9;
-            padding-top: 12rem;
-            padding-left: 7rem;
-            background: rgba(#00cec9,1);
-            
-            flex-direction: column;
-            justify-content : flex-start;
-            align-items : flex-start;
-            
-            position: fixed;
-            top : 0;
-            right : 0;
-            z-index:10;
-            transition: all .4s ease;
-            
-            .nav-item {
-                &:not(:last-child) {
-                    margin-bottom: 4rem;
-                }
-                &:nth-last-child(2),
-                &:last-child {
-                    display: none;
-                }
-            }
-            .nav-link {
-                font-size: 2rem;
-                &-after::after {
-                    display: none;
-                }
-            }
-        }
-    }
-    &-list.sticky {
-        @include repons(900px) {
-            top: 7.5rem;
-        }
-    }
-    .icon-mobile {
-        display: none;
-        align-items: center;
-        flex: 0 0 20%;
-        &-item {
-            &:first-child {
-                margin-right: 2.5rem;
-            }
-            list-style-type: none;
-            &-link {
-                color : #fff;
-                transition: all .2s ease;
-                &:hover {
-                    color : $secondary-color;
-                }
-                i {
-                    font-size: 3rem;
-                }
-            }
-        }
-        @include repons(900px) {
-            display: flex;
-        }
-    }
-    &-list.active {
-        transition: all .4s ease;
-        transform: translateX(0);
-        opacity: 1;
-    }
-    &-mobile {
-        display: none;
-        z-index: 1000;
-        flex: 0 0 20%;
-        .line {
-            margin-left: auto;
-            background-color: #fff;
-            width: 4rem;
-            height: 3px;
-            position: relative;
-            transition: all .3s ease;
-            &-1 {
-                top : -.7rem;
-            }
-            &-2 {
-                top : 0rem;
-            }
-            &-3 {
-                top : .7rem;
-            }
-        }
-        @include repons(900px) {
-            display: inline-block;
-        }
-    }
-    &-mobile.active {
-        .line {
-            top: 0;
-            transition: all .3s ease;
-            &-1 {
-                top : 1.5px;
-                transform: rotate(-135deg);
-            }
-            &-2 {
-                width: 0;
-                height: 0;
-                opacity: 0;
-                transform: translateX(7rem);
-            }
-            &-3 {
-                top : -1.5px;
-                transform: rotate(135deg);
-            }
-        }
     }
     &-item {
         &:not(:last-child) {
@@ -189,8 +71,134 @@
             }
         }
     }
+    // handle navbar mobile
+    @include repons(900px) {
+        // navbar mobile
+        &-list {
+            transform: translateX(35rem);
+            opacity: 0;
+            transition: all .4s ease;
+
+            width: 55vw;
+            height: 100vh;
+            background-color: #00cec9;
+            padding-top: 7rem;
+            padding-left: 7rem;
+            
+            flex-direction: column;
+            justify-content : flex-start;
+            align-items : flex-start;
+            
+            position: fixed;
+            top : 0;
+            right : 0;
+            z-index:10;
+            .nav-item {
+                &:not(:last-child) {
+                    margin-bottom: 4rem;
+                }
+                &:nth-last-child(2),
+                &:last-child {
+                    // icon undisplay
+                    display: none;
+                }
+            }
+            .nav-link {
+                font-size: 2rem;
+                &-after::after {
+                    // undisplay effect
+                    display: none;
+                }
+            }
+        }
+        &-list.active {
+            transition: all .4s ease;
+            transform: translateX(0);
+            opacity: 1;
+        }
+        // change when scroll
+        &-list.sticky {
+            top : 7rem;
+            @include repons(900px) {
+                top: 6rem;
+            }
+        }
+    }
+    .icon-mobile {
+        // icon navbar mobile
+        display: none;
+        align-items: center;
+        flex: 0 0 20%;
+        &-item {
+            &:first-child {
+                margin-right: 2.5rem;
+            }
+            list-style-type: none;
+            &-link {
+                color : #fff;
+                transition: all .2s ease;
+                &:hover {
+                    color : $secondary-color;
+                }
+                i {
+                    font-size: 3rem;
+                }
+            }
+        }
+        @include repons(900px) {
+            display: flex;
+        }
+    }
+    &-mobile {
+        display: none;
+        z-index: 1000;
+        flex: 0 0 20%;
+        .line {
+            margin-left: auto;
+            background-color: #fff;
+            width: 4rem;
+            height: 3px;
+
+            position: relative;
+            transition: all .3s ease;
+            &-1 {
+                top : -.7rem;
+            }
+            &-2 {
+                top : 0rem;
+            }
+            &-3 {
+                top : .7rem;
+            }
+        }
+        @include repons(900px) {
+            display: inline-block;
+        }
+    }
+    &-mobile.active {
+        .line {
+            top: 0;
+            transition: all .3s ease;
+            &-1 {
+                top : 1.5px;
+                transform: rotate(-135deg);
+            }
+            &-2 {
+                width: 0;
+                height: 0;
+                opacity: 0;
+                transform: translateX(7rem);
+            }
+            &-3 {
+                top : -1.5px;
+                transform: rotate(135deg);
+            }
+        }
+    }
+////// out handle narbar mobile
 }
 .nav-wrapper.active {
+    // scroll to fixed
     background-color: $third-color;
     position: fixed;
     top : 0;

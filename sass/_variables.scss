@@ -15,5 +15,8 @@ $font-primary: "Montserrat", 'Times New Roman';
 $font-secondary: "Roboto", 'Times New Roman';
 $font-third: "Kaushan Script", cursive;
 
-$wrapper: 1920px;
-$container: 1200px;
+@mixin repons($bp) {
+    @media screen and (max-width : $bp) {
+      @content
+    }
+  }
