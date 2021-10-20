@@ -157,11 +157,6 @@ html {
     font-size: 50%;
   }
 }
-@media screen and (max-width: 600px) {
-  html {
-    font-size: 43.75%;
-  }
-}
 html::-webkit-scrollbar {
   width: 1rem;
 }
@@ -647,7 +642,7 @@ p {
     font-size: 6rem;
   }
   .hero-heading-b span {
-    font-size: 12rem;
+    font-size: 11rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -658,16 +653,21 @@ p {
     font-size: 9.5rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .hero-heading-b span {
+    font-size: 8rem;
+  }
+}
 @media screen and (max-width: 479px) {
   .hero-heading-s {
     font-size: 4.5rem;
   }
   .hero-heading-b span {
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 1.2;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
   .hero-heading-s {
     font-size: 3.6rem;
   }

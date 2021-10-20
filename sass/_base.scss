@@ -10,9 +10,6 @@ html {
   @include repons (800px) {
     font-size: 50%;
   }
-  @include repons (600px) {
-    font-size: 43.75%;
-  }
   &::-webkit-scrollbar {
     width: 1rem;
   }

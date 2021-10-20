@@ -1,4 +1,5 @@
     AOS.init();
+    // slider 
     $('.owl-service').owlCarousel({
         items : 1,
         loop:true,
@@ -55,26 +56,6 @@
             }
         }
     })
-    // $('.brand-img').owlCarousel({
-    //     loop:true,
-    //     autoplay:true,
-    //     autoplayTimeout: 2500,
-    //     autoplaySpeed:1000,
-
-    //     nav : false,
-    //     dots : false,
-    //     responsive:{
-    //         200:{
-    //             items:4,
-    //         },
-    //         600:{
-    //             items:5,
-    //         },
-    //         1000:{
-    //             items:6,
-    //         }
-    //     }
-    // })
     $('.owl-repons').owlCarousel({
         loop:true,
         margin:10,
@@ -116,7 +97,7 @@ service_btns.forEach((btn,i) => {
 
     })
 })
-/// slider loanding
+/// slider hero loanding progress
 const dots = document.querySelectorAll('.owl-dot')
 const sliders = document.querySelectorAll('.slider')
 $('.owl-hero').on('changed.owl.carousel', function(e) {
@@ -135,7 +116,6 @@ $('.owl-hero').on('changed.owl.carousel', function(e) {
 window.onload = function() {
     sliders[0].classList.add('active')
 };
-
 /// nav sticky
 const nav = document.querySelector('.nav-wrapper')
     window.addEventListener('scroll' , () => {
