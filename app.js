@@ -140,7 +140,6 @@ navMobile.addEventListener('click', () => {
 
 })
 window.addEventListener('click' , (e)=> {
-    console.log(e.target)
     if(e.target.classList.contains('nav-mobile') == false && e.target.classList.contains('line') == false) {
         navMobile.classList.remove('active')
         navList.classList.remove('active')
